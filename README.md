@@ -32,7 +32,7 @@
 ## ESPHome code:
 ```
 esphome:
-  name: garaz-oled-display
+  name: oled-lcd
 
 esp8266:
   board: d1_mini
@@ -41,40 +41,37 @@ logger:
 captive_portal:
 api:
   encryption:
-    key: "Thv1BTI7DwFl0xDjO1zqdQH+Ev1t2n+WIcbbHhOGhys="
+    key: "Thv1BTI7DwFl0xDjO1zqdQH+Ev1t2n+WIcbbHhfjfs="
 ota:
   password: "ea9dc65662cb9e0514153bdecc6cb58c"
 
 wifi: 
   ssid: !secret wifi_ssid
   password: !secret wifi_password
-  manual_ip:
-    static_ip: 192.168.1.213
-    gateway: 192.168.1.1
-    subnet: 255.255.255.0  
-    dns1: 192.168.1.1
-    dns2: 1.1.1.1
+#  manual_ip: #optional
+#    static_ip: 192.168.1.213
+#    gateway: 192.168.1.1
+#    subnet: 255.255.255.0  
+#    dns1: 192.168.1.1
+#    dns2: 1.1.1.1
 
 i2c:
   sda: D1
   scl: D2
-  scan: false
+  scan: false #turn on for the first scan and to find the LCD address 
   # setup_priority: -100
 
 time:
-  # - platform: homeassistant
-  #   id: homeassistant_time
   - platform: sntp
-    id: homeassistant_time
+    id: sntp_time
 
 display:
   - platform: ssd1306_i2c
     model: "SSD1306 128x64"
     update_interval: 3s
     # setup_priority: -100
-    address: 0x3C
+    address: 0x3C # set your real address, which you can find in the log with i2c scan enabled
     lambda: |-
-
       if (id(test1).has_state()) {          
         it.printf(102, 0, id(font1), TextAlign::TOP_LEFT, "D=%s", id(test1).state.c_str()); 
        }
@@ -99,15 +96,13 @@ display:
       if (id(test8).has_state()) {        
         it.printf(77, 50, id(font1), TextAlign::TOP_LEFT, "V=%s", id(test8).state.c_str());
        } 
-
-      it.strftime(64, 32, id(font2), TextAlign::CENTER, "%H:%M", id(homeassistant_time).now()); 
-
       if (id(test9).has_state()) {        
         it.printf(0, 0, id(font1), TextAlign::TOP_LEFT, "C=%s Kc", id(test9).state.c_str());
        } 
       if (id(test10).has_state()) {        
         it.printf(0, 50, id(font1), TextAlign::TOP_LEFT, "P=%s W", id(test10).state.c_str());
        } 
+      it.strftime(64, 32, id(font2), TextAlign::CENTER, "%H:%M", id(sntp_time).now()); 
 
 
 text_sensor:
