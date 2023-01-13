@@ -7,7 +7,7 @@
 - OLED Display SSD1309 2.54" 128x64 (YY_M242_OLED))
 
 ## SHOP:
-- OLED Display SSD1309 2.54" 128x64 YY_M242_OLED: [ALI]([https://www.youtube.com/watch?v=u_aKcf_F1MM](https://www.aliexpress.com/item/1005003950796751.html?spm=a2g0o.order_list.order_list_main.11.6d691802H1X2WS)) 
+- OLED Display SSD1309 2.54" 128x64 YY_M242_OLED: [ALI](https://www.aliexpress.com/item/1005003950796751.html?spm=a2g0o.order_list.order_list_main.11.6d691802H1X2WS)
 
 ## Schema:
 
