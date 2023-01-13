@@ -10,7 +10,8 @@
 - RESET (RES) pin is optional to use
 - VCC is 5V or 3.3V
 - I recommend to use wemos D1 mini for 4M with ceramic antenna - it has better WIFI signal
-- TIP: I had a problem with ESPHome and Wemos D1 MINI PRO 16MB, so I recommend the 4M version and select D1 mini in ESPHome
+
+TIP: I had a problem with ESPHome and Wemos D1 MINI PRO 16MB, so I recommend the 4M version and select D1 mini in ESPHome
 
 ## Required knowledge:
 
