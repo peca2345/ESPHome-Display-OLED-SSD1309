@@ -5,11 +5,24 @@
 - MCU: ESP8266 (Wemos D1 mini)
 - Input voltage: VCC 5V / microUSB 5V
 - OLED Display SSD1309 2.54" 128x64 (YY_M242_OLED))
+- SSD1309 is not officially supported in ESPHome but works under SSD1306
+
+## Required knowledge:
+
+- Home Assistant: [tutorial](https://www.youtube.com/watch?v=u_aKcf_F1MM) 
+
+- ESPHome:        [tutorial](https://www.youtube.com/watch?v=mj-24SZLQKk) 
+
+- ESPHome OLED:   [tutorial](https://esphome.io/components/display/ssd1306.html)
+
+- Soldering:      [tutorial](https://www.youtube.com/watch?v=6rmErwU5E-k) 
 
 ## SHOP:
 - OLED Display SSD1309 2.54" 128x64 YY_M242_OLED: [ALI](https://www.aliexpress.com/item/1005003950796751.html?spm=a2g0o.order_list.order_list_main.11.6d691802H1X2WS)
 
 ## Schema:
+![Schematic](https://github.com/peca2345/ESPHome-Display-OLED-SSD1309/blob/main/schema.png?raw=true)
+
 
 ## ESPHome code:
 ```
