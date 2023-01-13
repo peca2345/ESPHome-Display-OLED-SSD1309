@@ -6,7 +6,12 @@
 - Input voltage: VCC 5V / microUSB 5V
 - OLED Display SSD1309 2.54" 128x64 (YY_M242_OLED))
 - SSD1309 is not officially supported in ESPHome but works under SSD1306
-
+- be careful when ordering OLED LCD - we used the version with 5pin - GND,VCC,SDA,SCL,RES
+- RESET (RES) pin is optional to use
+- VCC is 5V or 3.3V
+- I recommend to use wemos D1 mini for 4M with ceramic antenna - it has better WIFI signal
+- TIP: I had a problem with ESPHome and Wemos D1 MINI PRO 16MB, so I recommend the 4M version and select D1 mini in ESPHome
+- 
 ## Required knowledge:
 
 - Home Assistant: [tutorial](https://www.youtube.com/watch?v=u_aKcf_F1MM) 
@@ -19,10 +24,10 @@
 
 ## SHOP:
 - OLED Display SSD1309 2.54" 128x64 YY_M242_OLED: [ALI](https://www.aliexpress.com/item/1005003950796751.html?spm=a2g0o.order_list.order_list_main.11.6d691802H1X2WS)
+- Wemos D1 MINI PRO 4M: [ALI](https://www.aliexpress.com/item/32651747570.html?spm=a2g0o.productlist.main.1.4eef1669TC16QR&algo_pvid=9641c780-8b15-40e0-b9f9-39ecbb8e2ada&algo_exp_id=9641c780-8b15-40e0-b9f9-39ecbb8e2ada-0&pdp_ext_f=%7B%22sku_id%22%3A%2266484777552%22%7D&pdp_npi=2%40dis%21CZK%2156.45%2146.25%21%21%21%21%21%40212278f516736412240398368d0665%2166484777552%21sea&curPageLogUid=jzLecbtbu4kv)
 
 ## Schema:
 ![Schematic](https://github.com/peca2345/ESPHome-Display-OLED-SSD1309/blob/main/schema.png?raw=true)
-
 
 ## ESPHome code:
 ```
